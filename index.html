@@ -14,9 +14,20 @@
 <body>
 
   <div class="container">
+
     <form>
+
+      <div>
+        <label for="user-even-odd">Scegli pari o dispari</label>
+      <select id="user-even-odd">
+        <option value="Pari">Pari</option>
+        <option value="Dispari">Dispari</option>
+      </select>
+      </div>
+      
       <label for="user-nummber">Digita un numero da 1 a 5</label>
       <input id="user-nummber" type="number">
+
     </form>
    
     <div>
@@ -24,7 +35,7 @@
       <button id="reset-input">Annulla</button>
     </div>
 
-    <div id="result">Il vincitore è: </div>
+    <div id="result"></div>
   </div>
   
 

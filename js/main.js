@@ -19,11 +19,14 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
 const inputDom = document.getElementById('user-nummber');
 const buttonDom = document.getElementById('read-input');
 const computerNumberDom = document.getElementById('computer-number');
+const resetdom = document.getElementById('reset-input');
+const resultDom = document.getElementById('result');
 
+//pulsante di avvio
 buttonDom.addEventListener('click',
 
   function(){
-    const userNumber = inputDom.value;
+    const userNumber = parseInt(inputDom.value);
     console.log('Numero utente: ' + userNumber);
 
     if(userNumber > 5){
@@ -32,21 +35,59 @@ buttonDom.addEventListener('click',
       alert('Numero non valido! Inserisci un munero maggiore di 0');
     }
 
-    console.log('Numero computer: '+ generateRandomNumber (1, 5));
+    let computerNumber = generateRandomNumber (1, 5);
+    console.log(`Numero computer: ${computerNumber}`);
+
+    let sumResult = sum (userNumber, computerNumber);
+    console.log(`Somma dei due numeri: ${sumResult}`);
+
+    console.log(generateEvenOdd (sumResult));
+    resultDom.innerHTML += `Il risultato della somma è ${sumResult}, quindi il vincitore è`;
+    
 
   }
   
 )
 
+//pulsante di reset
+resetdom.addEventListener('click', 
+    function() {
+
+        inputDom.value = "";
+    }
+);
 
 
+//FUNZIONI
 
-//function
+//function somma
+function sum (numberA, numberB) {
+
+  let sum = numberA + numberB;
+  return sum;
+}
 
 
+//function pari e dispari
+function generateEvenOdd (numbertocheck){
+
+  let result = '';
+
+  if (numbertocheck % 2 == 0) {
+    result = 'Il numero è pari';
+  } else{
+    result = 'il numero è dispari';
+  }
+
+  return result;
+
+}
+
+
+//function random number
 function generateRandomNumber(min, max) {
    
-  let randomNumber = Math.floor( Math.random() * max) +1;
+  let randomNumber = Math.floor( Math.random() * max) + 1;
   return randomNumber;
 }
 
@@ -57,4 +98,3 @@ function generateRandomNumber(min, max) {
 
 
 
-//risultatoNome.innerHTML = nomeInserito;
