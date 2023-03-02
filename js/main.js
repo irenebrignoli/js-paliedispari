@@ -17,6 +17,7 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
 */
 
 const inputDom = document.getElementById('user-nummber');
+const selectDom = document.getElementById('user-even-odd');
 const buttonDom = document.getElementById('read-input');
 const computerNumberDom = document.getElementById('computer-number');
 const resetdom = document.getElementById('reset-input');
@@ -42,7 +43,23 @@ buttonDom.addEventListener('click',
     console.log(`Somma dei due numeri: ${sumResult}`);
 
     console.log(generateEvenOdd (sumResult));
-    resultDom.innerHTML += `Il risultato della somma è ${sumResult}, quindi il vincitore è`;
+
+    let EvenOddResult = generateEvenOdd (sumResult);
+
+    // if (selectDom == "pari"){
+    //   console.log("L'utente ha scelto: pari");
+    // }else if (selectDom == "dispari"){
+    //   console.log("L'utente ha scelto: dispari");
+    // }
+
+
+    if (EvenOddResult == selectDom){
+      console.log("L'utente ha vinto!");
+    }else{
+      console.log("Il computer ha vinto!");
+    }
+
+    resultDom.innerHTML += `Il risultato della somma è ${sumResult}, il numero è ${EvenOddResult}, quindi il vincitore è`;
     
 
   }
@@ -74,9 +91,9 @@ function generateEvenOdd (numbertocheck){
   let result = '';
 
   if (numbertocheck % 2 == 0) {
-    result = 'Il numero è pari';
+    result = 'pari';
   } else{
-    result = 'il numero è dispari';
+    result = 'dispari';
   }
 
   return result;
