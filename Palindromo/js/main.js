@@ -1,27 +1,31 @@
 
 
 const parola = prompt('Inserisci parola');
-
 console.log(parola);
 
-//const risultatoPalindromo = palindromo(parola);
+// let parolaDivisa = parola.split('');
+// console.log(parolaDivisa);
 
+// let parolaReverse = parolaDivisa.reverse();
+// console.log(parolaReverse);
 
+// let parolaInvertita = parolaReverse.join('');
+// console.log(parolaInvertita);
 
-// for(let i = 0; i <= parola.length - 1; i++){
+let parolaAlContrario = invertiParola(parola);
 
-//   console.log(parola[i]);
-// }
-
-
-
-
-
-
-function palindromo (parolaDaControllare){
-
-  for(let i = 0; i <= parolaDaControllare.length - 1; i++){
-
-    console.log(parolaDaControllare[i]);
+if(parola == parolaAlContrario){
+  console.log('la parola è palindroma');
+  } else {
+    console.log('la parola non è palindroma');
   }
+  
+
+
+function invertiParola(parolaDaInvertire){
+  let parolaInversa = parolaDaInvertire.split('').reverse().join('');  
+  return parolaInversa;
 }
+
+
+
