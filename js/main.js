@@ -32,7 +32,7 @@ buttonDom.addEventListener('click',
 
     if(userNumber > 5){
       alert('Numero non valido! Inserisci un munero minore di 5');
-    }else if(userNumber == 0){
+    }else if(userNumber <= 0){
       alert('Numero non valido! Inserisci un munero maggiore di 0');
     }
 
@@ -46,20 +46,17 @@ buttonDom.addEventListener('click',
 
     let EvenOddResult = generateEvenOdd (sumResult);
 
-    // if (selectDom == "pari"){
-    //   console.log("L'utente ha scelto: pari");
-    // }else if (selectDom == "dispari"){
-    //   console.log("L'utente ha scelto: dispari");
-    // }
+    let winner = "";
 
-
-    if (EvenOddResult == selectDom){
+    if (EvenOddResult == selectDom.value){
       console.log("L'utente ha vinto!");
+      winner = "l'utente";
     }else{
       console.log("Il computer ha vinto!");
+      winner = "il computer";
     }
 
-    resultDom.innerHTML += `Il risultato della somma è ${sumResult}, il numero è ${EvenOddResult}, quindi il vincitore è`;
+    resultDom.innerHTML += `Il risultato della somma è ${sumResult}, il numero è ${EvenOddResult}, quindi il vincitore è ${winner}.`;
     
 
   }
@@ -71,6 +68,7 @@ resetdom.addEventListener('click',
     function() {
 
         inputDom.value = "";
+        resultDom.innerHTML = "";
     }
 );
 
