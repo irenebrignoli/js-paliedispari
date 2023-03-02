@@ -3,14 +3,35 @@
 const parola = prompt('Inserisci parola');
 console.log(parola);
 
-// let parolaDivisa = parola.split('');
-// console.log(parolaDivisa);
+let risultatoPalindromo = palindromoSiNo(parola);
+console.log(risultatoPalindromo);
 
-// let parolaReverse = parolaDivisa.reverse();
-// console.log(parolaReverse);
 
-// let parolaInvertita = parolaReverse.join('');
-// console.log(parolaInvertita);
+function palindromoSiNo(string) {
+ 
+  let result = "";
+
+  for (var i = string.length - 1; i >= 0; i--) { 
+
+    result += string[i]; 
+  }
+
+  if(parola == result){
+    result = 'La parola è palindroma';
+  }else{
+    result = 'La parola non è palindroma';
+  }
+
+  return result;
+}
+
+
+
+
+
+//ALTRO MODO
+
+/*
 
 let parolaAlContrario = invertiParola(parola);
 
@@ -27,5 +48,5 @@ function invertiParola(parolaDaInvertire){
   return parolaInversa;
 }
 
-
+*/
 
